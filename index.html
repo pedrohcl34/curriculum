@@ -4,8 +4,10 @@
 
       <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.min.css" />
       <link rel="stylesheet" href="https://unpkg.com/clarity-icons/clarity-icons.min.css"/>
+      <link rel="stylesheet" href="css/style.css"/>
       <script src="https://unpkg.com/@webcomponents/custom-elements/custom-elements.min.js"></script>
       <script src="https://unpkg.com/clarity-icons/clarity-icons.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -13,23 +15,175 @@
           <header class="header header-6">
 
             <div class="branding">
-              <a href = "#"><clr-icon shape="computer"></clr-icon>
+              <a><clr-icon shape="computer"></clr-icon>
                 <span class="title">PEDRO HENRIQUE DE CASTRO LIMA</span></a>
             </div>
           </header>
           <nav class="subnav">
               <ul class="nav">
-                <li class="nav-item"><a class="nav-link active">Quem sou eu</a></li>
-                <li class="nav-item"><a class="nav-link">Educação</a></li>
-                <li class="nav-item"><a class="nav-link">Experiência Profissional</a></li>
+                <li class="nav-item"><a href="#iam" class="nav-link active">Quem sou eu</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Educação</a></li>
+                <li class="nav-item"><a href="#experiencia" class="nav-link">Experiência Profissional</a></li>
               </ul>
 
           </nav>
           <div class="content-container">
               <div class="content-area">
-              </div>
+                <h3 id="iam">Quem sou eu</h3>
+                <div class="clr-row">
+                    <div class="clr-col-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <span class="card-media-title">
+                              Pedro Lima
+                          </span>
+                        </div>
+                        <div class="card-block">
+                          <div class="card-media-block">
+                            <img src="images/picture.jpg" class="card-media-image"/>
+                            <div class="card-media-description">
+                              <span class="card-media-text">Cientista da Computação</span>
+                            </div>
+                          </div>
+                          <div class="card-text">
+                            <article>
+                              <p>Natural da cidade de Ji-Paraná - RO, morei na cidade de Rio Branco no Acre até os 8 anos de idade e então mudei para a cidade de Grajaú do Maranhão, onde vivi até 2008. No ano de 2008 fui aprovado no CEFET-MA atual IFMA Campus Imperatriz, e lá dei início à minha jornada no mundo da computação como Técnico em Informática e logo em seguida ingressei no Curso de Ciência da Computação na UFT. Atualmente resido na cidade de Palmas e trabalho como Desenvolvedor de Sistemas.</p>
+                              <p>Por ter vivido em tantos lugares me considero um pouco de cada um dos Estados/Cidades que já morei, sou um mix de cada cultura e tenho desejo incrementar um pouco mais esse mix.</p>
+                              <p>Não tenho um hobby definido, mas diria que gosto bastante de assistir filmes e me envolvo bastante com aqueles que abordam viagens temporais.</p>
+                              <p>Desejo fazer a diferença no mundo, mesmo que a mudança que eu causar seja mínima, gostaria de realizar algo relevante.</p>
+                            </article>
+                          </div>
+                        </div>
+                        <div class="card-footer"><a href="https://www.linkedin.com/in/pedro-lima-046134149/" class="btn btn-sm btn-link">Saiba Mais</a></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 id="education">Educação</h3>
+
+                  <ul class="clr-timeline clr-timeline-horizontal" id="edu-timeline">
+                    <li class="clr-timeline-step disabled">
+
+                      <div class="clr-timeline-step-header">2008 (Médio-Técnico)</div>
+                      <clr-icon shape="success-standard" aria-label="Concluído"></clr-icon>
+                      <div class="clr-timeline-step-body">
+                        <div class="card-media-block">
+                          <img src="images/ifma.png" class="card-media-image"/>
+                        </div>
+                        <span class="clr-timeline-step-title">Técnico em Informática</span>
+                        <span class="clr-timeline-step-description">IFMA Campus Imperatriz</span>
+                          <span class="clr-timeline-step-description">Imperatriz - MA</span>
+                      </div>
+                    </li>
+                    <li class="clr-timeline-step">
+                      <div class="clr-timeline-step-header">2011 (Graduação)</div>
+                      <clr-icon shape="dot-circle" aria-current="true" aria-label="Interrompido"></clr-icon>
+                      <div class="clr-timeline-step-body">
+                        <div class="card-media-block">
+                          <img src="images/uft.png" class="card-media-image"/>
+                        </div>
+                        <span class="clr-timeline-step-title">Ciência da Computação</span>
+                        <span class="clr-timeline-step-description">Universidade Federal do Tocantins</span>
+                        <span class="clr-timeline-step-description">Palmas - TO</span>
+                      </div>
+                    </li>
+                    <li class="clr-timeline-step">
+                      <div class="clr-timeline-step-header">2014 (Intercâmbio)</div>
+                        <clr-icon shape="success-standard" aria-current="true" aria-label="Concluído"></clr-icon>
+                      <div class="clr-timeline-step-body">
+                        <div class="card-media-block">
+                          <img src="images/rrc.png" class="card-media-image"/>
+                        </div>
+                        <span class="clr-timeline-step-title">Business Information Technology</span>
+                        <span class="clr-timeline-step-description">Red River College</span>
+                        <span class="clr-timeline-step-description">Winnipeg - CA</span>
+                      </div>
+                    </li>
+                    <li class="clr-timeline-step">
+                      <div class="clr-timeline-step-header">2017 (Graduação)</div>
+                      <clr-icon shape="success-standard" aria-current="true" aria-label="Concluído"></clr-icon>
+                      <div class="clr-timeline-step-body">
+                        <div class="card-media-block">
+                          <img src="images/uft.png" class="card-media-image"/>
+                        </div>
+                        <span class="clr-timeline-step-title">Ciência da Computação</span>
+                        <span class="clr-timeline-step-description">Universidade Federal do Tocantins</span>
+                        <span class="clr-timeline-step-description">Palmas - TO</span>
+                      </div>
+                    </li>
+                  </ul>
+
+                    <h3 id="experiencia">Experiência Profissional</h3>
+                    <div class="clr-row" id="exp-row">
+                      <div class="clr-col-lg-4 clr-col-12">
+                        <div class="card">
+                          <div class="card-header">Desenvolvedor de Software Pleno</div>
+                          <div class="card-block">
+                            <div class="card-media-block">
+                              <img src="images/sifcon.png" class="card-media-image">
+                              <div class="card-media-description">
+                                <span class="card-media-title">Empresa: Sifcon Sistemas</span>
+                                <span class="card-media-text">Novembro 2017 - Atual</span>
+                              </div>
+                            </div>
+                            <div class="card-text">Desenvolvimento de sistemas internos para controle financeiro e outras funcionalidades. Tecnologias: JAVA SE, JAVA EE, JSF, Primefaces, PosgreSQL, JBoss Wildfly, Java FX, Bootstrap, Git, Jira Software, Java Restful + SOAP </div>
+                          </div>
+                          <div class="card-footer">
+                            <a href="https:\\www.sifcon.com.br" target="_blank" class="btn btn-sm btn-link">Conheça</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clr-col-lg-4 clr-col-12">
+                        <div class="card">
+                          <div class="card-header">Desenvolvedor de Sistemas FullStack</div>
+                          <div class="card-block">
+                            <div class="card-media-block">
+                              <img src="images/fapto.png" class="card-media-image">
+                              <div class="card-media-description">
+                                <span class="card-media-title">Empresa: FAPTO</span>
+                                <span class="card-media-text">Junho 2017 - Outubro 2017</span>
+                              </div>
+                            </div>
+                            <div class="card-text">Desenvolvimento do projeto de Cadastro Territorial Urbano e Planta Genérica de Valores de Paraíso do Tocantins. Tecnologias utilizadas: Java, Java EE, Bootstrap, Hibernate,Kotlin + Spring Boot, Postgres + Postgis, Geoserver, Vue JS </div>
+                          </div>
+                          <div class="card-footer">
+                            <a href="http://fapto.org.br/" target="_blank" class="btn btn-sm btn-link">Conheça</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clr-col-lg-4 clr-col-12">
+                        <div class="card">
+                          <div class="card-header">Estagiário</div>
+                          <div class="card-block">
+                            <div class="card-media-block">
+                              <img src="images/detran.png" class="card-media-image">
+                              <div class="card-media-description">
+                                <span class="card-media-title">Empresa: DETRAN - TO</span>
+                                <span class="card-media-text">Junho 2016 - Março 2017</span>
+                              </div>
+                            </div>
+                            <div class="card-text">Desenvolvimento de novas funcionalidades, suporte interno e manutenção do sistema de Chamados. Tecnologias: Java EE, Java SE, Java FX, JSF, Primefaces, Hibernate, PostgreSQL, Semantic UI, Jboss Wildfly, Git </div>
+                          </div>
+                          <div class="card-footer">
+                            <a href="https://detran.to.gov.br/" target="_blank" class="btn btn-sm btn-link">Conheça</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
           </div>
       </div>
     </body>
 
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            $('a.active').removeClass('active');
+            $(this).addClass('active');
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'});
+          });
+        });
+    </script>
 </html>

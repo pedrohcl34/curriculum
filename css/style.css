@@ -1,0 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#edu-timeline .clr-timeline-step-body .card-media-image{
+  height: 30px;
+  object-fit: contain;
+}
+
+#exp-row .card .card-media-image{
+  object-fit: contain;
+  width: 100%;
+  max-width: 5rem;
+}
+
+.card .card-text{
+  text-align: justify;
+}
