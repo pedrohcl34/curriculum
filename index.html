@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
       <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.min.css" />
@@ -6,9 +7,19 @@
       <script src="https://unpkg.com/@webcomponents/custom-elements/custom-elements.min.js"></script>
       <script src="https://unpkg.com/clarity-icons/clarity-icons.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="src/jquery.i18n.js"></script>
+	    <script src="src/jquery.i18n.messagestore.js"></script>
+	    <script src="src/jquery.i18n.fallbacks.js"></script>
+	    <script src="src/jquery.i18n.language.js"></script>
+	    <script src="src/jquery.i18n.parser.js"></script>
+	    <script src="src/jquery.i18n.emitter.js"></script>
+	    <script src="src/jquery.i18n.emitter.bidi.js"></script>
+      <script src="js/language.js"></script>
+      <script src="js/functions.js"></script>
   </head>
 
     <body>
+
       <div class="main-container">
           <header class="header header-6">
 
@@ -16,18 +27,34 @@
               <a><clr-icon shape="computer"></clr-icon>
                 <span class="title">PEDRO HENRIQUE DE CASTRO LIMA</span></a>
             </div>
+            <div class="settings">
+              <div class="dropdown bottom-left">
+                <a class="dropdown-toggle" onclick="dropdown();">
+                  <img src="images/br.png" class="language-icon"/>
+                  <clr-icon shape="caret down"></clr-icon>
+                </a>
+                <div class="dropdown-menu">
+                  <h4 class="dropdown-header" data-i18n="menu.select.language"></h4>
+                  <div class="dropdown-item"  onclick="languageSelect('br');"><img class="language-select-icon" src="images/br.png"/> Português</div>
+                  <div class="dropdown-item"  onclick="languageSelect('en');"><img class="language-select-icon" src="images/en.png"/> English</div>
+                </div>
+              </div>
+                <a title="Meu Git" class="nav-link nav-icon" href="https://github.com/pedrohcl34">
+                  <img class="settings-image" src="images/github_logo.png"/>
+                </a>
+            </div>
           </header>
           <nav class="subnav">
               <ul class="nav">
-                <li class="nav-item"><a href="#iam" class="nav-link active">Quem sou eu</a></li>
-                <li class="nav-item"><a href="#education" class="nav-link">Educação</a></li>
-                <li class="nav-item"><a href="#experiencia" class="nav-link">Experiência Profissional</a></li>
+                <li class="nav-item"><a href="#iam" data-i18n="menu.profile" class="nav-link active">Quem sou eu</a></li>
+                <li class="nav-item"><a href="#education" data-i18n="menu.education" class="nav-link">Educação</a></li>
+                <li class="nav-item"><a href="#experiencia" data-i18n="menu.experience" class="nav-link">Experiência Profissional</a></li>
               </ul>
 
           </nav>
           <div class="content-container">
               <div class="content-area">
-                <h3 id="iam">Quem sou eu</h3>
+                <h3 id="iam" data-i18n="menu.profile">Quem sou eu</h3>
                 <div class="clr-row">
                     <div class="clr-col-12">
                       <div class="card">
@@ -40,53 +67,51 @@
                           <div class="card-media-block">
                             <img src="images/picture.jpg" class="card-media-image"/>
                             <div class="card-media-description">
-                              <span class="card-media-text">Cientista da Computação</span>
+                              <span class="card-media-text" data-i18n="label.job"></span>
                             </div>
                           </div>
                           <div class="card-text">
                             <article>
-                              <p>Natural da cidade de Ji-Paraná - RO, morei na cidade de Rio Branco no Acre até os 8 anos de idade e então mudei para a cidade de Grajaú do Maranhão, onde vivi até 2008. No ano de 2008 fui aprovado no CEFET-MA atual IFMA Campus Imperatriz, e lá dei início à minha jornada no mundo da computação como Técnico em Informática e logo em seguida ingressei no Curso de Ciência da Computação na UFT. Atualmente resido na cidade de Palmas e trabalho como Desenvolvedor de Sistemas.</p>
-                              <p>Por ter vivido em tantos lugares me considero um pouco de cada um dos Estados/Cidades que já morei, sou um mix de cada cultura e tenho desejo incrementar um pouco mais esse mix.</p>
-                              <p>Não tenho um hobby definido, mas diria que gosto bastante de assistir filmes e me envolvo bastante com aqueles que abordam viagens temporais.</p>
-                              <p>Desejo fazer a diferença no mundo, mesmo que a mudança que eu causar seja mínima, gostaria de realizar algo relevante.</p>
+                              <p data-i18n="info.where"></p>
+                              <p data-i18n="info.about"></p>
                             </article>
                           </div>
                         </div>
-                        <div class="card-footer"><a href="https://www.linkedin.com/in/pedro-lima-046134149/" class="btn btn-sm btn-link">Saiba Mais</a></div>
+                        <div class="card-footer"><a href="https://www.linkedin.com/in/pedro-lima-046134149/" class="btn btn-sm btn-link" data-i18n="button.more"></a></div>
                       </div>
                     </div>
                   </div>
 
-                  <h3 id="education">Educação</h3>
+                  <h3 id="education" data-i18n="menu.education">Educação</h3>
 
                   <ul class="clr-timeline clr-timeline-horizontal" id="edu-timeline">
                     <li class="clr-timeline-step disabled">
 
-                      <div class="clr-timeline-step-header">2008 (Médio-Técnico)</div>
+                      <div class="clr-timeline-step-header">2008 (<span data-i18n="education.tech"></span>)</div>
                       <clr-icon shape="success-standard" aria-label="Concluído"></clr-icon>
                       <div class="clr-timeline-step-body">
                         <div class="card-media-block">
                           <img src="images/ifma.png" class="card-media-image"/>
                         </div>
-                        <span class="clr-timeline-step-title">Técnico em Informática</span>
+                        <span class="clr-timeline-step-title" data-i18n="education.ifma"></span>
                         <span class="clr-timeline-step-description">IFMA Campus Imperatriz</span>
                           <span class="clr-timeline-step-description">Imperatriz - MA</span>
                       </div>
                     </li>
                     <li class="clr-timeline-step">
-                      <div class="clr-timeline-step-header">2011 (Graduação)</div>
+                      <div class="clr-timeline-step-header">2011 (<span data-i18n="education.bachelor"></span>)</div>
                       <clr-icon shape="dot-circle" aria-current="true" aria-label="Interrompido"></clr-icon>
                       <div class="clr-timeline-step-body">
                         <div class="card-media-block">
                           <img src="images/uft.png" class="card-media-image"/>
                         </div>
-                        <span class="clr-timeline-step-title">Ciência da Computação</span>
+                        <span class="clr-timeline-step-title" data-i18n="education.uft">Ciência da Computação</span>
                         <span class="clr-timeline-step-description">Universidade Federal do Tocantins</span>
                         <span class="clr-timeline-step-description">Palmas - TO</span>
                       </div>
                     </li>
                     <li class="clr-timeline-step">
-                      <div class="clr-timeline-step-header">2014 (Intercâmbio)</div>
+                      <div class="clr-timeline-step-header">2014 (<span data-i18n="education.exchange"></span>)</div>
                         <clr-icon shape="success-standard" aria-current="true" aria-label="Concluído"></clr-icon>
                       <div class="clr-timeline-step-body">
                         <div class="card-media-block">
@@ -98,127 +123,127 @@
                       </div>
                     </li>
                     <li class="clr-timeline-step">
-                      <div class="clr-timeline-step-header">2017 (Graduação)</div>
+                      <div class="clr-timeline-step-header">2017 (<span data-i18n="education.bachelor"> </span>)</div>
                       <clr-icon shape="success-standard" aria-current="true" aria-label="Concluído"></clr-icon>
                       <div class="clr-timeline-step-body">
                         <div class="card-media-block">
                           <img src="images/uft.png" class="card-media-image"/>
                         </div>
-                        <span class="clr-timeline-step-title">Ciência da Computação</span>
+                        <span class="clr-timeline-step-title" data-i18n="education.uft"></span>
                         <span class="clr-timeline-step-description">Universidade Federal do Tocantins</span>
                         <span class="clr-timeline-step-description">Palmas - TO</span>
                       </div>
                     </li>
                   </ul>
 
-                    <h3 id="experiencia">Experiência Profissional</h3>
+                    <h3 id="experiencia" data-i18n="menu.experience">Experiência Profissional</h3>
                     <div class="clr-row" id="exp-row">
                       <div class="clr-col-lg-4 clr-col-12">
                         <div class="card">
-                          <div class="card-header">Desenvolvedor de Software Pleno</div>
+                          <div class="card-header" data-i18n="job.middle.developer"></div>
                           <div class="card-block">
                             <div class="card-media-block">
                               <img src="images/sifcon.png" class="card-media-image">
                               <div class="card-media-description">
-                                <span class="card-media-title">Empresa: Sifcon Sistemas</span>
-                                <span class="card-media-text">Novembro 2017 - Atual</span>
+                                <span class="card-media-title"><span data-i18n="job.company"></span> Sifcon Sistemas</span>
+                                <span class="card-media-text"><span data-i18n="month.november"></span> 2017 - <span data-i18n="time.now"></span></span>
                               </div>
                             </div>
-                            <div class="card-text">Desenvolvimento de sistemas internos para controle financeiro e outras funcionalidades. Tecnologias: JAVA SE, JAVA EE, JSF, Primefaces, PosgreSQL, JBoss Wildfly, Java FX, Bootstrap, Git, Jira Software, Java Restful + SOAP </div>
+                            <div class="card-text"><span data-i18n="sifcon.experience"></span> <span data-i18n="job.technologies"></span> JAVA SE, JAVA EE, JSF, Primefaces, PosgreSQL, JBoss Wildfly, Java FX, Bootstrap, Git, Jira Software, Java Restful + SOAP </div>
                           </div>
                           <div class="card-footer">
-                            <a href="https:\\www.sifcon.com.br" target="_blank" class="btn btn-sm btn-link">Saiba Mais</a>
+                            <a href="https:\\www.sifcon.com.br" target="_blank" class="btn btn-sm btn-link" data-i18n="button.more"></a>
                           </div>
                         </div>
                       </div>
                       <div class="clr-col-lg-4 clr-col-12">
                         <div class="card">
-                          <div class="card-header">Desenvolvedor de Sistemas FullStack</div>
+                          <div class="card-header"data-i18n="job.fullStack.developer"></div>
                           <div class="card-block">
                             <div class="card-media-block">
                               <img src="images/fapto.png" class="card-media-image">
                               <div class="card-media-description">
-                                <span class="card-media-title">Empresa: FAPTO</span>
-                                <span class="card-media-text">Junho 2017 - Outubro 2017</span>
+                                <span class="card-media-title"><span data-i18n="job.company"></span> FAPTO </span>
+                                <span class="card-media-text"><span data-i18n="month.june"></span> 2017 - <span data-i18n="month.october"></span> 2017</span>
                               </div>
                             </div>
-                            <div class="card-text">Desenvolvimento do projeto de Cadastro Territorial Urbano e Planta Genérica de Valores de Paraíso do Tocantins. Tecnologias utilizadas: Java, Java EE, Bootstrap, Hibernate,Kotlin + Spring Boot, Postgres + Postgis, Geoserver, Vue JS </div>
+                            <div class="card-text"><span data-i18n="fapto.experience"></span> <span data-i18n="job.technologies"></span> Java, Java EE, Bootstrap, Hibernate,Kotlin + Spring Boot, Postgres + Postgis, Geoserver, Vue JS </div>
                           </div>
                           <div class="card-footer">
-                            <a href="http://fapto.org.br/" target="_blank" class="btn btn-sm btn-link">Saiba Mais</a>
+                            <a href="http://fapto.org.br/" target="_blank" class="btn btn-sm btn-link" data-i18n="button.more"></a>
                           </div>
                         </div>
                       </div>
                       <div class="clr-col-lg-4 clr-col-12">
                         <div class="card">
-                          <div class="card-header">Estagiário</div>
+                          <div class="card-header" data-i18n="job.intern"></div>
                           <div class="card-block">
                             <div class="card-media-block">
                               <img src="images/detran.png" class="card-media-image">
                               <div class="card-media-description">
-                                <span class="card-media-title">Empresa: DETRAN - TO</span>
-                                <span class="card-media-text">Junho 2016 - Março 2017</span>
+                                <span class="card-media-title"><span data-i18n="job.intern"></span> DETRAN - TO</span>
+                                <span class="card-media-text"><span data-i18n="month.june"></span> 2016 - <span data-i18n="month.march"></span> 2017</span>
                               </div>
                             </div>
-                            <div class="card-text">Desenvolvimento de novas funcionalidades, suporte interno e manutenção do sistema de Chamados. Tecnologias: Java EE, Java SE, Java FX, JSF, Primefaces, Hibernate, PostgreSQL, Semantic UI, Jboss Wildfly, Git </div>
+                            <div class="card-text"><span data-i18n="detran.experience"></span> <span data-i18n="job.technologies"></span> Java EE, Java SE, Java FX, JSF, Primefaces, Hibernate, PostgreSQL, Semantic UI, Jboss Wildfly, Git </div>
                           </div>
                           <div class="card-footer">
-                            <a href="https://detran.to.gov.br/" target="_blank" class="btn btn-sm btn-link">Saiba Mais</a>
+                            <a href="https://detran.to.gov.br/" target="_blank" class="btn btn-sm btn-link" data-i18n="button.more"></a>
                           </div>
                         </div>
                       </div>
                       <div class="clr-col-lg-4 clr-col-12">
                         <div class="card">
-                          <div class="card-header">Proprietário</div>
+                          <div class="card-header" data-i18n="job.owner"></div>
                           <div class="card-block">
                             <div class="card-media-block">
                               <img src="images/cinneshow.png" class="card-media-image">
                               <div class="card-media-description">
-                                <span class="card-media-title">Empresa: Cinneshow de Grajaú</span>
-                                <span class="card-media-text">Novembro 2015 - Dezembro 2016</span>
+                                <span class="card-media-title"><span data-i18n="job.company"></span> Cinneshow de Grajaú</span>
+                                <span class="card-media-text"><span data-i18n="month.november"></span> 2015 - <span data-i18n="month.december"></span> 2016</span>
                               </div>
                             </div>
-                            <div class="card-text">Exibição de filmes recentes para toda a população Grajauense, oferecendo um novo tipo de entretenimento para a cidade. Venda de pipoca e refrigerante no local. O projeto teve início no Cineteatro São Camilo e foi Concluído no Colégio Nicolau Dino.</div>
+                            <div class="card-text" data-i18n="cinneshow.experience"></div>
                           </div>
                           <div class="card-footer">
-                            <a href="https://pt-br.facebook.com/cinnemmashow/" target="_blank" class="btn btn-sm btn-link">Saiba Mais</a>
+                            <a href="https://pt-br.facebook.com/cinnemmashow/" target="_blank" class="btn btn-sm btn-link" data-i18n="button.more"></a>
                           </div>
                         </div>
                       </div>
                       <div class="clr-col-lg-4 clr-col-12">
                         <div class="card">
-                          <div class="card-header">Bolsista CSF</div>
+                          <div class="card-header" data-i18n="job.scholarship"></div>
                           <div class="card-block">
                             <div class="card-media-block">
                               <img src="images/capes.png" class="card-media-image">
                               <div class="card-media-description">
-                                <span class="card-media-title">Empresa: CAPES</span>
-                                <span class="card-media-text"> Abril 2014 - Agosto 2015</span>
+                                <span class="card-media-title"><span data-i18n="job.company"></span> CAPES</span>
+                                <span class="card-media-text"> <span data-i18n="month.april"></span> 2014 - <span data-i18n="month.august"></span> 2015</span>
                               </div>
                             </div>
-                            <div class="card-text">Intercâmbio Internacional no qual foi realizado Estágio Linguístico com duração de 8 meses no Language Training Center do Red River College. Em seguida iniciaram-se as atividades do 3º período de Business Information Technology do RRC. Os conhecimentos obtidos foram e são constantemente utilizados. </div>
+                            <div class="card-text" data-i18n="capes.experience"></div>
                           </div>
                           <div class="card-footer">
-                            <a href="http://cienciasemfronteiras.gov.br/web/csf/o-programa" target="_blank" class="btn btn-sm btn-link">Saiba Mais</a>
+                            <a href="http://cienciasemfronteiras.gov.br/web/csf/o-programa" target="_blank" class="btn btn-sm btn-link" data-i18n="button.more"></a>
                           </div>
                         </div>
                       </div>
 
                       <div class="clr-col-lg-4 clr-col-12">
                         <div class="card">
-                          <div class="card-header">Estagiário</div>
+                          <div class="card-header" data-i18n="job.intern"></div>
                           <div class="card-block">
                             <div class="card-media-block">
                               <img src="images/bb.png" class="card-media-image">
                               <div class="card-media-description">
-                                <span class="card-media-title">Empresa: Superintendência Banco do Brasil - TO</span>
-                                <span class="card-media-text">Setembro 2013 - Abril 2014</span>
+                                <span class="card-media-title"><span data-i18n="job.company"> </span> Superintendência Banco do Brasil - TO</span>
+                                <span class="card-media-text"><span data-i18n="month.september"></span> 2013 - <span data-i18n="month.april"></span> 2014</span>
                               </div>
                             </div>
-                            <div class="card-text">Desenvolvimento da intranet da Superintendência, aplicativos internos, manutenção de softwares internos e suporte interno. Tecnologias: Java EE, Java SE + Swing, Java FX, JSF, Primefaces, Hibernate, PostgreSQL, Glassfish, Suse Linux </div>
+                            <div class="card-text"><span data-i18n="bb.experience"></span> <span data-i18n="job.technologies"></span> Java EE, Java SE + Swing, Java FX, JSF, Primefaces, Hibernate, PostgreSQL, Glassfish, Suse Linux </div>
                           </div>
                           <div class="card-footer">
-                            <a href="https://www.bb.com.br/portalbb/page4,8305,4879,0,0,1,6.bb" target="_blank" class="btn btn-sm btn-link">Saiba Mais</a>
+                            <a href="https://www.bb.com.br/portalbb/page4,8305,4879,0,0,1,6.bb" target="_blank" class="btn btn-sm btn-link" data-i18n="button.more"></a>
                           </div>
                         </div>
                       </div>
@@ -230,6 +255,9 @@
     </body>
 
     <script>
+        $.i18n( { locale: 'br' } );
+        $('[data-i18n]').i18n();
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -239,5 +267,6 @@
                 behavior: 'smooth'});
           });
         });
+
     </script>
 </html>
