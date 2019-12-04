@@ -36,3 +36,8 @@ html {
 .dropdown.bottom-left{
   margin-right: 10px;
 }
+
+.dropdown-toggle{
+  display: flex;
+  align-items: center;
+}
